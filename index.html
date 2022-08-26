@@ -9,6 +9,12 @@
       p2.city = "Whashington";
       console.log("p (after modification of p2) =", p);
       console.log("p2 =", p2);
+
+      var q = { lastname:"H", firstname: "Yei"};
+      console.log("q (before modification of p2) =", q);
+      var q2 = {...q, age:31};
+      console.log("q (after creation of q2) =", q);
+      console.log("q2 (after creation of q2) =", q2);
       /*class Person {
         firstname = "";
         lastname = "";

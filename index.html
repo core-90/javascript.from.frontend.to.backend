@@ -3,9 +3,27 @@
     <meta charset="utf-8" />
     <script>
       class Person {
+        firstname = "";
+        lastname = "";
+        age = 0;
+
+        display(){
+          console.log("The person's lastname is = " + this.lastname + 
+                      ", firstname = " + this.firstname);
+        }
       }
       var p = new Person;
+
+      p.firstname = "Bill";
+      p.lastname = "Clinton";
       console.log(p);
+      p.display();
+
+      //var p = { lastname:"Clinton", firstname: "Bill"};
+      //Note: you can indicate the names of the properties by enclosing them in quotation marks
+      //var q = { "lastname":"Clinton", "firstname": "Bill"};
+      //console.log(p);
+      //console.log(q);
     </script>
   </head>
   <body>

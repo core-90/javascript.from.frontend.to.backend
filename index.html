@@ -1,51 +1,41 @@
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <script>
 
-      var p = { lastname:"Clinton", firstname: "Bill"};
-      console.log("p (before modification of p2) =", p);
-      var p2 = p;
-      p2.city = "Whashington";
-      console.log("p (after modification of p2) =", p);
-      console.log("p2 =", p2);
+<head>
+  <meta charset="utf-8" />
+  <script>
 
-      var q = { lastname:"H", firstname: "Yei"};
-      console.log("q (before modification of p2) =", q);
-      var q2 = {...q, age:31};
-      console.log("q (after creation of q2) =", q);
-      console.log("q2 (after creation of q2) =", q2);
-      /*class Person {
-        firstname = "";
-        lastname = "";
-        age = 0;
+    var tab = ["Element 1", "Element 2", "Element 3", "Element 4",
+      "Element 5"];
+    console.log(tab);
 
-        constructor(lastname, firstname, age){
-          this.lastname = lastname;
-          this.firstname = firstname;
-          this.age = age;
-        }*/
+    var tab2 = new Array("Element 1", "Element 2", "Element 3", "Element 4",
+      "Element 5");
+    console.log(tab2);
 
-        /*display(){
-          console.log("The person's lastname is = " + this.lastname + 
-                      ", firstname = " + this.firstname +
-                      ", age = " + this.age);
-        }*/
-      
-      //var p = new Person("Clinton", "Bill", 33);
+    var emptyarray = [];
+    var emptyarray2 = new Array();
+    console.log(emptyarray);
+    console.log(emptyarray2);
+    
 
-      //p.firstname = "Bill";
-      //p.lastname = "Clinton";
-      //console.log("Variable p = ",p);
-      //p.display();
 
-      //
-      //Note: you can indicate the names of the properties by enclosing them in quotation marks
-      //var q = { "lastname":"Clinton", "firstname": "Bill"};
-      //console.log(p);
-      //console.log(q);
-    </script>
-  </head>
-  <body>
-  </body>
+    /*var p = { lastname:"Clinton", firstname: "Bill"};
+    console.log("p (before modification of p2) =", p);
+    var p2 = p;
+    p2.city = "Whashington";
+    console.log("p (after modification of p2) =", p);
+    console.log("p2 =", p2);
+
+    var q = { lastname:"H", firstname: "Yei"};
+    console.log("q (before modification of p2) =", q);
+    var q2 = {...q, age:31};
+    console.log("q (after creation of q2) =", q);
+    console.log("q2 (after creation of q2) =", q2);*/
+
+  </script>
+</head>
+
+<body>
+</body>
+
 </html>

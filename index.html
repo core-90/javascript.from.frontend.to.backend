@@ -7,16 +7,23 @@
         lastname = "";
         age = 0;
 
+        constructor(lastname, firstname, age){
+          this.lastname = lastname;
+          this.firstname = firstname;
+          this.age = age;
+        }
+
         display(){
           console.log("The person's lastname is = " + this.lastname + 
-                      ", firstname = " + this.firstname);
+                      ", firstname = " + this.firstname +
+                      ", age = " + this.age);
         }
       }
-      var p = new Person;
+      var p = new Person("Clinton", "Bill", 33);
 
-      p.firstname = "Bill";
-      p.lastname = "Clinton";
-      console.log(p);
+      //p.firstname = "Bill";
+      //p.lastname = "Clinton";
+      console.log("Variable p = ",p);
       p.display();
 
       //var p = { lastname:"Clinton", firstname: "Bill"};

@@ -3,86 +3,35 @@
 <head>
   <meta charset="utf-8" />
   <script>
-
+    /*
+    * Using the filter(callback) method
+    */
+    //Original array
     var tab = ["Element 1", "Element 2", "Element 3", "Element 4",
       "Element 5"];
-      console.log("tab = ",tab);
-      console.log("tab[0] = ",tab[0]);
-      console.log("tab[1] = ",tab[1]);
-      console.log("tab[2] = ",tab[2]);
-      console.log("tab[3] = ",tab[3]);
-      console.log("tab[4] = ",tab[4]);
-      console.log("tab[5] = ",tab[5]);
 
-      //modifying using indexes
+    console.log("initial tab: ",tab);
 
-      tab[2] = "New element 3";
-      tab[3] = "New element 4";
+    // keep only items with index >= 2
+    tab = tab.filter(function(element, index){
+      if(index>=2) return true;
+    });
+    console.log("\nfinal tab =", tab);
 
-      console.log("Array after modification");
-      console.log("tab = ",tab);
+    /*
+    * Using the map(callback) method
+    */
+    var tab = ["Element 1", "Element 2", "Element 3", "Element 4",
+      "Element 5"];
 
-      console.log("Access to each element by a for() loop");
-      for (var i = 0; i < tab.length; i++) console.log("tab[" + i + "]=", tab[i]);
+      console.log("initial tab: ",tab);
 
-      console.log("Access to each element by the forEach() method");
-      tab.forEach(function(elem, i){
-        console.log("tab[" + i + "] =", elem);
-      })
+    tab = tab.map(function(element, index){
+      return element.toUpperCase();
+    });
 
-      tab.push("Element 6");
-      tab.forEach(function(elem, i){
-        console.log("tab[" + i + "] =", elem);
-      })
-
-      //Delete the value rerefenced by the index without changing the length of the array
-
-      delete tab[1];
-      console.log("Array after modification");
-
-
-      console.log("Access to each element by a for() loop");
-      for (var i = 0; i < tab.length; i++) console.log("tab[" + i + "]=", tab[i]);
-      
-      console.log("Access to each element by the forEach() method");
-      tab.forEach(function(elem, i){
-        console.log("tab[" + i + "] =", elem);
-      })
-      console.log("Array modified by splice method");
-      tab.splice(1,1);
-      console.log("Array after modification");
-      console.log("Access to each element by a for() loop");
-      for (var i = 0; i < tab.length; i++) console.log("tab[" + i + "]=", tab[i]);
-
-
+    console.log("\nfinal tab =", tab);
     
-    
-    
-    
-
-    /*var tab2 = new Array("Element 1", "Element 2", "Element 3", "Element 4",
-      "Element 5");
-    console.log(tab2);
-
-    var emptyarray = [];
-    var emptyarray2 = new Array();
-    console.log(emptyarray);
-    console.log(emptyarray2);*/
-    
-
-
-    /*var p = { lastname:"Clinton", firstname: "Bill"};
-    console.log("p (before modification of p2) =", p);
-    var p2 = p;
-    p2.city = "Whashington";
-    console.log("p (after modification of p2) =", p);
-    console.log("p2 =", p2);
-
-    var q = { lastname:"H", firstname: "Yei"};
-    console.log("q (before modification of p2) =", q);
-    var q2 = {...q, age:31};
-    console.log("q (after creation of q2) =", q);
-    console.log("q2 (after creation of q2) =", q2);*/
 
   </script>
 </head>

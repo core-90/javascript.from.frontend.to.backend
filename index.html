@@ -3,35 +3,27 @@
 <head>
   <meta charset="utf-8" />
   <script>
-    /*
-    * Using the filter(callback) method
-    */
-    //Original array
-    var tab = ["Element 1", "Element 2", "Element 3", "Element 4",
-      "Element 5"];
+    var lastname = "Clinton";
+    var firstname = "Bill";
 
-    console.log("initial tab: ",tab);
+    //old way of concatenating strings and variables
+    var s1 = "last name is: " + lastname + "first name is:" + firstname;
 
-    // keep only items with index >= 2
-    tab = tab.filter(function(element, index){
-      if(index>=2) return true;
-    });
-    console.log("\nfinal tab =", tab);
+    // new way of concatenating strings and variables(using reverse quotes)
+    var s2 = `last name is: ${lastname}, first name is: ${firstname}`;
 
-    /*
-    * Using the map(callback) method
-    */
-    var tab = ["Element 1", "Element 2", "Element 3", "Element 4",
-      "Element 5"];
+    //using the String class
+    var s3 = new String(`last name is: ${lastname}, first name is: ${firstname}`);
 
-      console.log("initial tab: ",tab);
+    console.log("s1 =", s1);
+    console.log("s2 =", s2);
+    console.log("s3 =", s3);
 
-    tab = tab.map(function(element, index){
-      return element.toUpperCase();
-    });
+    if(s2.length == s1.length)
+      console.log(s1.length);
 
-    console.log("\nfinal tab =", tab);
-    
+    console.log(s1.length);
+
 
   </script>
 </head>

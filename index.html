@@ -3,59 +3,21 @@
 <head>
   <meta charset="utf-8" />
   <script>
+    /*Using the setTimeout() function -> Processing instructions after a delay of 5 seconds*/
+    console.log("Processing instructions after a delay of 5 seconds");
 
-    //Using match(regexp)
-    var s = "Hello";
-    console.log("s =", s);
+    console.log("Before setTimeout()");
+    
+    setTimeout(function () {
+      console.log("In the callback function");
+    }, 5000);
 
-    // search for "Hel"
-    console.log(`s.match(/Hel/) = ${s.match(/Hel/)}`);
+    console.log("After setTimeout");
 
-    // search for "hel"
-    console.log(`s.match(/hel/) = ${s.match(/hel/)}`);
-
-    // search for "hel" ignoring upper/lower case
-    console.log(`s.match(/hel/i) = ${s.match(/hel/i)}`);
-
-    // search for H followed by a or b or e followed by l
-    console.log(`s.match(/H[abe]l/) = ${s.match(/H[abe]l/)}`);
-
-    // search for He followed by 0 or 1 a followed by l
-    console.log(`s.match(/Hea?l/) = ${s.match(/Hea?l/)}`);
-
-    // search for He followed by 0 (min) to 1 (max) followed by l
-    console.log(`s.match(/Hea{0,1}l/) = ${s.match(/Hea{0,1}l/)}`);
-
-    // search for He followed 1 (min) to 2 (max) followed by l
-    console.log(`s.match(/Hea{1,2}l/) = ${s.match(/Hea{1,2}l/)}`);
+    
 
 
-    //Replacing a part of a string with a given format
-    var s = "Hello";
-    console.log("s =", s);
-    // search for "Hel" and replace with "abc"
-    console.log(`s.replace(/Hel/, "abc") => ${s.replace(/Hel/,
-      "abc")}`);
-    // search for "hel" and replace with "abc"
-    console.log(`s.replace(/hel/, "abc") => ${s.replace(/hel/,
-      "abc")}`);
-    // search for hel ignoring upper/lower case and replacing with 
-    // "abc"
-    console.log(`s.replace(/hel/i, "abc") => ${s.replace(/hel/i,
-      "abc")}`);
-    // search for H followed by a or b or e followed by l and 
-    // replace with "abc"
-    console.log(`s.replace(/H[abe]l/, "abc") => ${s.replace(/H[abe]l /, "abc")}`);
-    // search for He followed by 0 or 1 a followed by l and 
-    // replaced by "abc"
-    console.log(`s.replace(/Hea?l/, "abc") => ${s.replace(/Hea?l/,
-      "abc")}`);
-    // search for He followed by 0 (min) to 1 (max) followed by l 
-    // and replaced by "abc"
-    console.log(`s.replace(/Hea{0,1}l/, "abc") => ${s.replace(/Hea{0, 1}l /, "abc")}`);
-    // search for He followed by 1 (min) to 2 (max) followed by l 
-    // and replaced by "abc"
-    console.log(`s.replace(/Hea{1,2}l/, "abc") => ${s.replace(/Hea{ 1, 2}l /, "abc")}`);
+
 
 
   </script>

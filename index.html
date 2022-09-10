@@ -11,34 +11,18 @@
   <div id="app">First div</div>
 </body>
 
-<script>
-  //Defining a count reactive variable
+<script type="module">
+
+  import Counter from "/counter.js";
+  
   var app = Vue.createApp({
-    template: "<counter/>"
-    
-  });
-
-  app.component("counter", {
-    template : "The counter is {{count}}",
-    data(){
-      return{
-        count : 0
-      }
+    components : {
+      Counter:Counter
     },
-    created(){
-      setInterval(()=>{ // do not use the function()
-                        // form here,
-                        // otherwise the "this" object
-                        // would not be the same
-        this.count++;
-      }, 1000);
-    }
-
+    template : "<counter/>" // or "<Counter />"
   });
+
   var vm = app.mount("div#app");
-  /*setInterval(function(){
-    vm.count += 1;
-  }, 1000);*/
 </script>
 
 </html>

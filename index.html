@@ -9,24 +9,28 @@
 
 <body>
   <div id="app">First div</div>
-  
 </body>
+
 <script>
   //Defining a count reactive variable
   var app = Vue.createApp({
-    template: "The counter is: {{count}}",
-    data() {
-      // return an object containing the reactive
-      // variables
-      return {
-        count: 0
+    template: "<counter/>"
+    
+  });
+
+  app.component("counter", {
+    template : "The counter is {{count}}",
+    data(){
+      return{
+        count : 0
       }
     }
+
   });
   var vm = app.mount("div#app");
-  setInterval(function(){
+  /*setInterval(function(){
     vm.count += 1;
-  }, 1000);
+  }, 1000);*/
 </script>
 
 </html>

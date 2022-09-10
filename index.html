@@ -24,6 +24,14 @@
       return{
         count : 0
       }
+    },
+    created(){
+      setInterval(()=>{ // do not use the function()
+                        // form here,
+                        // otherwise the "this" object
+                        // would not be the same
+        this.count++;
+      }, 1000);
     }
 
   });

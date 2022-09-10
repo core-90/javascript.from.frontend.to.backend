@@ -24,6 +24,9 @@
     }
   });
   var vm = app.mount("div#app");
+  setInterval(function(){
+    vm.count += 1;
+  }, 1000);
 </script>
 
 </html>

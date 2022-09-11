@@ -1,13 +1,13 @@
 const Counter = {
     data() {
         return {
-            count: 0
+            count: parseInt(this.start),
         }
     },
     template: `{{time()}} &nbsp;&nbsp; The counter is: {{count}},
                                          double is: {{countX2}}`,
     created() {
-        setInterval(() => {
+        var timer = setInterval(() => {
             this.count += 1;
         }, 1000)
     },
@@ -30,6 +30,9 @@ const Counter = {
         countX2(){
             return 2 * this.count;
         }
-    }
+    },
+    props : [
+        "start"
+    ]
 }
 export default Counter;

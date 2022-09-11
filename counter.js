@@ -1,11 +1,15 @@
 const Counter = {
     data() {
         return {
-            count: parseInt(this.start),
+            count: parseInt(this.start),// we initialize the
+                                        // count to the value
+                                        // of start
         }
     },
-    template: `{{time()}} &nbsp;&nbsp; The counter is: {{count}},
-                                         double is: {{countX2}}`,
+    template: `{{time()}} &nbsp;&nbsp; 
+        <span v-if='count<=20'>The counter is: {{count}}</span>
+        <span v-else>The counter has exceeded 20, it is:
+        {{count}}</span>`,
     created() {
         var timer = setInterval(() => {
             this.count += 1;
@@ -26,12 +30,12 @@ const Counter = {
         }
     },
     //Defining computed properties in the computed section
-    computed : {
-        countX2(){
+    computed: {
+        countX2() {
             return 2 * this.count;
         }
     },
-    props : [
+    props: [
         "start"
     ]
 }

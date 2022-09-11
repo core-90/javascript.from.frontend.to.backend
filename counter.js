@@ -1,42 +1,30 @@
 const Counter = {
+    /*The difference from the v-if directive is that the element, if not displayed, is only 
+        hidden, but it is still inserted into the page. Whereas with the v-if directive, the element 
+        is not inserted (if the condition is false).*/
     data() {
         return {
-            count: parseInt(this.start),// we initialize the
-                                        // count to the value
-                                        // of start
+            counts: ["Counter 1", "Counter 2", "Counter 3",
+                "Counter 4", "Counter 5"],
+            //Array use to show v-for index use
+            indexedCounts: ["iCounter 1", "iCounter 2", "iCounter 3",
+                "iCounter 4", "iCounter 5"],
         }
     },
-    template: `{{time()}} &nbsp;&nbsp; 
-        <span v-if='count<=20'>The counter is: {{count}}</span>
-        <span v-else>The counter has exceeded 20, it is:
-        {{count}}</span>`,
-    created() {
-        var timer = setInterval(() => {
-            this.count += 1;
-        }, 1000)
-    },
-    methods: {
-        time() {
-            // return time as HH:MM:SS
-            var date = new Date();
-            var hour = date.getHours();
-            var min = date.getMinutes();
-            var sec = date.getSeconds();
-            if (hour < 10) hour = "0" + hour;
-            if (min < 10) min = "0" + min;
-            if (sec < 10) sec = "0" + sec;
-            return "" + hour + ":" + min + ":" + sec + " ";
+    template: `
+        <!--Displaying counters as a list-->
+        <ul>
+            <li v-for="count in counts">
+                <span>{{count}}</span>
+            </li>
+        </ul>
+        <!--Displaying counters and their index (counter.js file)-->
+        <ul>
+            <li v-for="(count, index) in indexedCounts">
+                <span>Index {{index}} : {{count}}</span>
+            </li>
+        </ul>`,
 
-        }
-    },
-    //Defining computed properties in the computed section
-    computed: {
-        countX2() {
-            return 2 * this.count;
-        }
-    },
-    props: [
-        "start"
-    ]
 }
+
 export default Counter;

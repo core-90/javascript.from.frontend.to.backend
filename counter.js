@@ -4,7 +4,8 @@ const Counter = {
             count: 0
         }
     },
-    template: `{{time()}} &nbsp;&nbsp; The counter is: {{count}}`,
+    template: `{{time()}} &nbsp;&nbsp; The counter is: {{count}},
+                                         double is: {{countX2}}`,
     created() {
         setInterval(() => {
             this.count += 1;
@@ -22,6 +23,12 @@ const Counter = {
             if (sec < 10) sec = "0" + sec;
             return "" + hour + ":" + min + ":" + sec + " ";
 
+        }
+    },
+    //Defining computed properties in the computed section
+    computed : {
+        countX2(){
+            return 2 * this.count;
         }
     }
 }

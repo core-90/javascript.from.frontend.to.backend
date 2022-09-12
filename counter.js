@@ -3,25 +3,19 @@ const Counter = {
     data() {
         return {
             count : 0,
-            message : "",
+            old_value : 0,
         }
     },
     template : ` 
-        <!--The event parameter is passed valid processing function-->
-        count (less than 100): <input type="text"
-        :value="count" @blur="valid($event)" @keydown="verif($event)"/>
-        &nbsp;&nbsp; count = {{count}}
-        <br><br>
-        <span>{{message}}</span>`,
+        <!---->
+        <input type="text" v-model="count"  
+        @keydown="verif($event)" 
+        @input="calcul()"
+        @focus="focus()"
+        @blur="blur()"/>
+        `,
     methods : {
-        valid(event){
-            this.message = "";
-            if(event.target.value < 100){
-                this.count = event.target.value;
-            }else{
-                this.message = "Error: count must be less than 100";
-            }
-        },
+
         verif(event){
             console.log("value of the key pressed: ", event.key);// display in the console 
                                                                 // the value of the key 
@@ -35,8 +29,27 @@ const Counter = {
                         event.preventDefault();
                     }
                 }
+                this.old_value = event.target.value;
+        },
+        calcul(){
+            this.$emit("sub", this.old_value || 0);
+            this.$emit("add", this.count || 0);
+        },
+        focus(){
+            if(this.old_value == "0"){
+                this.count = "";
+            }
+        },
+        blur(){
+            if(parseInt(this.count)){
+                this.old_value = 0;
+                this.count = 0;
+            }
         }
     },
+
+    emits : ["sub", "add"]  // declare events emitted to 
+                            // the parent
     
 }
 export default Counter;

@@ -8,18 +8,18 @@
 </head>
 
 <body>
-  <div id="app">First div</div>
+  <div id="app"></div>
 </body>
 
 <script type="module">
 
-  import Counter from "./counter.js";
+  import Counters from "./counters.js";
   
   var app = Vue.createApp({
     components : {
-      Counter:Counter
+      Counters:Counters
     },
-    template : "<counter/>" // or "<Counter />"
+    template : "<counters/>" // or "<Counters/>"
   });
 
   var vm = app.mount("div#app");

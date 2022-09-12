@@ -7,12 +7,21 @@ const Counter = {
     },
     template : ` <button @click="this.count++">Increment counter by count++</button>
                     &nbsp;&nbsp; count = {{count}} <br><br>
-                <button @click="incr()">Increment counter by incr()</button>
+                <!--instead of using a semicolon we can use a comma-->
+                <button @click="incr();incr2()">Increment counter by incr()</button>
                     &nbsp;&nbsp; count = {{count}} <br><br>`,
     methods : {
         incr(){
             this.count++;
+            console.log("first method call");
+        },
+        incr2(){
+            console.log("second method call");
         }
-    }
+    },
+    props : [
+        "start"
+    ]
+
 }
 export default Counter;

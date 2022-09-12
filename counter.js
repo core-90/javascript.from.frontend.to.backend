@@ -2,7 +2,7 @@
 const Counter = {
     data() {
         return {
-            count: 0,
+            count: parseInt(this.start),
         }
     },
     template : ` <button @click="this.count++">Increment counter by count++</button>
@@ -13,6 +13,9 @@ const Counter = {
         incr(){
             this.count++;
         }
-    }
+    },
+    props : [
+        "start"
+    ]
 }
 export default Counter;

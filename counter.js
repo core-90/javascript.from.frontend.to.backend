@@ -32,8 +32,9 @@ const Counter = {
                 this.old_value = event.target.value;
         },
         calcul(){
-            this.$emit("sub", this.old_value || 0);
-            this.$emit("add", this.count || 0);
+            this.$emit("sub", this.old_value || 0); //subtract
+                                                    //old value
+            this.$emit("add", this.count || 0);     //add new value
         },
         focus(){
             if(this.old_value == "0"){

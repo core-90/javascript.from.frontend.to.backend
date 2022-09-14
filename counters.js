@@ -9,13 +9,21 @@ const Counters = {
     components: {
         Counter: Counter
     },
+    props : ["nb"],
+    computed : {
+        NB(){
+            var tab = [];
+            for(var i = 0; i < this.nb; i++){ tab.push(i+1);}
+            return tab;
+        }
+    },
     template: `
-            Counter 1 : <counter @add="add($event)" 
-            @sub="sub($event)" /> <br>
-            Counter 2 : <counter @add="add($event)" 
-            @sub="sub($event)" /> <br>
-            Counter 3 : <counter @add="add($event)" 
-            @sub="sub($event)" /> <br><br>
+            <div v-for="i in NB">
+                Counter {{i}} : <counter @add="add($event)"
+                @sub="sub($event)" />
+
+            </div>
+            <br>
             Total : {{total}} <br>
             `,
     methods: {

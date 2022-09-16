@@ -5,11 +5,10 @@
   <!--To use Vue.js in an HTML page, simply insert the library file into it using
       the <script> tag.-->
   <script src="https://unpkg.com/vue@next"></script>
-  <style type="test/css">
+  <style type="text/css">
     .v-enter-from{
       opacity: 0;
       background-color: #FFCCCC;
-
     }
     .v-enter-to{
       opacity: 0.5;
@@ -36,8 +35,8 @@
       }
     },
     template : `
-    <button @click="show=!show"> Produce the effect
-      <button/>
+    <button @click="show=!show"> Produce the effect</button>
+
       <transition>
         <p v-if="show">
             Paragraph 1

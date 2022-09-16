@@ -6,16 +6,16 @@
       the <script> tag.-->
   <script src="https://unpkg.com/vue@next"></script>
   <style type="text/css">
-    .v-enter-from{
-      opacity: 0;
+    .v-leave-from{
+      opacity: 1;
       background-color: #FFCCCC;
     }
-    .v-enter-to{
-      opacity: 0.5;
+    .v-leave-to{
+      opacity: 0;
       background-color: black;
     }
-    .v-enter-active{
-      transition: opacity 2s, background-color 2s;
+    .v-leave-active{
+      transition: opacity 2s, background-color 2s; /*this equals to: transition: all 2s;*/
     }
   </style>
 </head>
@@ -31,7 +31,7 @@
   var app = Vue.createApp({
     data(){
       return{
-        show: false //initially hidden
+        show: true //visible at start
       }
     },
     template : `

@@ -10,8 +10,18 @@ const GlobalApp = {
         Element:Element
     },
     template : `
-        <button>Add Element</button>
-        <ul></ul>
+        <button @click="add()">Add Element</button>
+        <ul>
+            <li v-for="(element, index) in elements"
+            :key="index">{{element}}</li>
+        </ul>
     `,
+    methods : {
+        add(){
+            var element = "Element" + (this.elements.length +
+                 1); // "Element X"
+            this.elements.push(element);
+        }
+    },
 }
 export default GlobalApp;

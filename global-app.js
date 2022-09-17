@@ -12,8 +12,8 @@ const GlobalApp = {
     template : `
         <button @click="add()">Add Element</button>
         <ul>
-            <li v-for="(element, index) in elements"
-            :key="index">{{element}}</li>
+            <Element v-for="(element, index) in elements"
+            :key="index" :text="element" />
         </ul>
     `,
     methods : {
